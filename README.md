@@ -1,1 +1,1 @@
-This is a repository where holds some excercises from the book "Learning Java".
+This is a repository where holds some exercises from the book "Learning Java".
