@@ -8,20 +8,23 @@ $SourceCode = "./ch03/exercises/HelloJava2.java"
 $ManifestFile = "./ch03/exercises/HelloJava2Manifest.txt"
 $FinalJar = "./HelloJava2.jar"
 
+# expression with color
+$WriteHostColor = "Write-Host -ForegroundColor DarkGreen"
+
 foreach ($ClassFile in $ClassFiles) {
     if (Test-Path $ClassFile) {
         Remove-Item $ClassFile -Verbose
-        Write-Host "[!] Class file ${ClassFile} already exists, removing it."
+        Invoke-Expression "${WriteHostColor} '[!] Class file ${ClassFile} already exists, removing it.'"
     } else {
-        Write-Host "[!] Class file ${ClassFile} does not exists. Do nothing"
+        Invoke-Expression "${WriteHostColor} '[!] Class file ${ClassFile} does not exists. Do nothing'"
     }
 }
 
-Write-Host "[!] Compiling classes"
+Invoke-Expression "${WriteHostColor} '[!] Compiling classes'"
 javac.exe $SourceCode
 
-Write-Host "[!] Creating jar"
+Invoke-Expression "${WriteHostColor} '[!] Creating jar'"
 jar.exe -cvmf $ManifestFile $FinalJar $ClassFiles
 
-Write-Host "[!] Executing jar"
+Invoke-Expression "${WriteHostColor} '[!] Executing jar'"
 java.exe -jar $FinalJar
