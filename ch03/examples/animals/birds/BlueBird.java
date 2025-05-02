@@ -1,4 +1,4 @@
-package ch03.examples.animals.birds;
+package animals.birds;
 
 public class BlueBird {
     
