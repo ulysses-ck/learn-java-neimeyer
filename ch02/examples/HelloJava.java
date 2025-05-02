@@ -1,4 +1,4 @@
-package ch02;
+package ch02.examples;
 
 public class HelloJava {
     public static void main (String[] args) {
